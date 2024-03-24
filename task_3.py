@@ -5,11 +5,11 @@ a = int(input('Введите целое число: '))
 
 
 def fibonacci(n):
-    fn = [0, 1]
-    for i in range(2, n):
-        fn.append(fn[i-1] + fn[i-2])
-    return fn
+    a, b = 0, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
 
 
-print(fibonacci(a))
+print(list(fibonacci(a)))
 
